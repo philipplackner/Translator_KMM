@@ -8,5 +8,5 @@ enum class TranslateError {
 }
 
 class TranslateException(val error: TranslateError): Exception(
-    message = "An error occurred when translating: $error"
+    "An error occurred when translating: $error"
 )
