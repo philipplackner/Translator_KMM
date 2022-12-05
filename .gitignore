@@ -8,3 +8,5 @@ captures
 .cxx
 local.properties
 xcuserdata
+
+shared/src/commonMain/kotlin/com/plcoding/translator_kmm/NetworkConstants.kt
