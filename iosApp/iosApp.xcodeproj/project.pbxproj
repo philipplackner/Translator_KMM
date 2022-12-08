@@ -16,6 +16,7 @@
 		C369F5232942762B0044D3AB /* LanguageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369F5222942762B0044D3AB /* LanguageDisplay.swift */; };
 		C369F5252942768D0044D3AB /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369F5242942768D0044D3AB /* ProgressButton.swift */; };
 		C369F527294277D80044D3AB /* TranslateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369F526294277D80044D3AB /* TranslateTextField.swift */; };
+		C369F52929429B400044D3AB /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369F52829429B400044D3AB /* TextToSpeech.swift */; };
 		C391A39E29425BD300225264 /* LanguageDropDownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391A39D29425BD300225264 /* LanguageDropDownItem.swift */; };
 		C391A3A029425F1F00225264 /* LanguageDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391A39F29425F1F00225264 /* LanguageDropDown.swift */; };
 		C391A3A22942605200225264 /* SmallLanguageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391A3A12942605200225264 /* SmallLanguageIcon.swift */; };
@@ -38,6 +39,7 @@
 		C369F5222942762B0044D3AB /* LanguageDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDisplay.swift; sourceTree = "<group>"; };
 		C369F5242942768D0044D3AB /* ProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		C369F526294277D80044D3AB /* TranslateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextField.swift; sourceTree = "<group>"; };
+		C369F52829429B400044D3AB /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		C391A39D29425BD300225264 /* LanguageDropDownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDropDownItem.swift; sourceTree = "<group>"; };
 		C391A39F29425F1F00225264 /* LanguageDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDropDown.swift; sourceTree = "<group>"; };
 		C391A3A12942605200225264 /* SmallLanguageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLanguageIcon.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				C391A39C29425BAB00225264 /* components */,
 				C391A3A5294262F400225264 /* IOSTranslateViewModel.swift */,
 				C391A3A72942631100225264 /* TranslateScreen.swift */,
+				C369F52829429B400044D3AB /* TextToSpeech.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				C391A3A42942618700225264 /* SwapLanguageButton.swift in Sources */,
 				C3F18C8C293FCB2600D2C6D3 /* Colors.swift in Sources */,
 				C391A3A82942631100225264 /* TranslateScreen.swift in Sources */,
+				C369F52929429B400044D3AB /* TextToSpeech.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				C369F527294277D80044D3AB /* TranslateTextField.swift in Sources */,
 			);
@@ -440,6 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 6X88Y56M4D;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -463,7 +468,7 @@
 					"-framework",
 					shared,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = plcoding.translatorkmm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -477,6 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 6X88Y56M4D;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,7 +506,7 @@
 					"-framework",
 					shared,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = plcoding.translatorkmm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
