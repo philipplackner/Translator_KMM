@@ -14,6 +14,7 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		C3119E6F2943BC41002FC4C6 /* MicrophonePowerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3119E6E2943BC41002FC4C6 /* MicrophonePowerObserver.swift */; };
 		C3119E712943C049002FC4C6 /* IOSVoiceToTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3119E702943C049002FC4C6 /* IOSVoiceToTextParser.swift */; };
+		C3119E742943D00B002FC4C6 /* IOSVoiceToTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3119E732943D00B002FC4C6 /* IOSVoiceToTextViewModel.swift */; };
 		C369F521294274AB0044D3AB /* GradientSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369F520294274AB0044D3AB /* GradientSurface.swift */; };
 		C369F5232942762B0044D3AB /* LanguageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369F5222942762B0044D3AB /* LanguageDisplay.swift */; };
 		C369F5252942768D0044D3AB /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369F5242942768D0044D3AB /* ProgressButton.swift */; };
@@ -40,6 +41,7 @@
 		9B2671CA8D1BC253E9D25077 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3119E6E2943BC41002FC4C6 /* MicrophonePowerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophonePowerObserver.swift; sourceTree = "<group>"; };
 		C3119E702943C049002FC4C6 /* IOSVoiceToTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSVoiceToTextParser.swift; sourceTree = "<group>"; };
+		C3119E732943D00B002FC4C6 /* IOSVoiceToTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSVoiceToTextViewModel.swift; sourceTree = "<group>"; };
 		C369F520294274AB0044D3AB /* GradientSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSurface.swift; sourceTree = "<group>"; };
 		C369F5222942762B0044D3AB /* LanguageDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDisplay.swift; sourceTree = "<group>"; };
 		C369F5242942768D0044D3AB /* ProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		C3119E6C2943BC26002FC4C6 /* voice_to_text */ = {
 			isa = PBXGroup;
 			children = (
+				C3119E722943CFF9002FC4C6 /* presentation */,
 				C3119E6D2943BC33002FC4C6 /* data */,
 			);
 			path = voice_to_text;
@@ -133,6 +136,14 @@
 				C3119E702943C049002FC4C6 /* IOSVoiceToTextParser.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		C3119E722943CFF9002FC4C6 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C3119E732943D00B002FC4C6 /* IOSVoiceToTextViewModel.swift */,
+			);
+			path = presentation;
 			sourceTree = "<group>";
 		};
 		C391A39A29425B9900225264 /* translate */ = {
@@ -327,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C369F5252942768D0044D3AB /* ProgressButton.swift in Sources */,
+				C3119E742943D00B002FC4C6 /* IOSVoiceToTextViewModel.swift in Sources */,
 				C3119E6F2943BC41002FC4C6 /* MicrophonePowerObserver.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				C369F521294274AB0044D3AB /* GradientSurface.swift in Sources */,
