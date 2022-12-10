@@ -74,4 +74,7 @@ object Deps {
     const val composeTestManifest = "androidx.compose.ui:ui-test-manifest:$composeVersion"
 
     const val hiltTesting = "com.google.dagger:hilt-android-testing:$hiltVersion"
+
+    private const val rulesVersion = "1.4.0"
+    const val rules = "androidx.test:rules:$rulesVersion"
 }
