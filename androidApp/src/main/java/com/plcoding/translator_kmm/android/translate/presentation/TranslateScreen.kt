@@ -28,6 +28,14 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewDynamicColors
+import androidx.compose.ui.tooling.preview.PreviewFontScale
+import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import androidx.compose.ui.tooling.preview.PreviewScreenSizes
+import com.plcoding.translator_kmm.android.TranslatorTheme
 
 @Composable
 fun TranslateScreen(
@@ -118,7 +126,7 @@ fun TranslateScreen(
             item {
                 val clipboardManager = LocalClipboardManager.current
                 val keyboardController = LocalSoftwareKeyboardController.current
-                val tts = rememberTextToSpeech()
+//                val tts = rememberTextToSpeech()
                 TranslateTextField(
                     fromText = state.fromText,
                     toText = state.toText,
@@ -150,13 +158,13 @@ fun TranslateScreen(
                         onEvent(TranslateEvent.CloseTranslation)
                     },
                     onSpeakerClick = {
-                        tts.language = state.toLanguage.toLocale() ?: Locale.ENGLISH
-                        tts.speak(
-                            state.toText,
-                            TextToSpeech.QUEUE_FLUSH,
-                            null,
-                            null
-                        )
+//                        tts.language = state.toLanguage.toLocale() ?: Locale.ENGLISH
+//                        tts.speak(
+//                            state.toText,
+//                            TextToSpeech.QUEUE_FLUSH,
+//                            null,
+//                            null
+//                        )
                     },
                     onTextFieldClick = {
                         onEvent(TranslateEvent.EditTranslation)
@@ -186,5 +194,20 @@ fun TranslateScreen(
                 )
             }
         }
+    }
+}
+
+@PreviewScreenSizes
+@PreviewFontScale
+@PreviewLightDark
+@PreviewDynamicColors
+@Preview
+@Composable
+fun TranslateScreenPreview() {
+    TranslatorTheme {
+        TranslateScreen(
+            state = TranslateState(),
+            onEvent = {}
+        )
     }
 }

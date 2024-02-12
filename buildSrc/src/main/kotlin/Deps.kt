@@ -4,13 +4,15 @@ object Deps {
     private const val activityComposeVersion = "1.6.1"
     const val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
 
-    const val composeVersion = "1.4.0-alpha02"
-    const val composeUi = "androidx.compose.ui:ui:$composeVersion"
-    const val composeUiTooling = "androidx.compose.ui:ui-tooling:$composeVersion"
-    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:$composeVersion"
-    const val composeFoundation = "androidx.compose.foundation:foundation:$composeVersion"
-    const val composeMaterial = "androidx.compose.material:material:$composeVersion"
-    const val composeIconsExtended = "androidx.compose.material:material-icons-extended:$composeVersion"
+    const val composeBomVersion = "2024.02.00"
+    const val composeBom = "androidx.compose:compose-bom:$composeBomVersion"
+
+    const val composeUi = "androidx.compose.ui:ui"
+    const val composeUiTooling = "androidx.compose.ui:ui-tooling"
+    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview"
+    const val composeFoundation = "androidx.compose.foundation:foundation"
+    const val composeMaterial = "androidx.compose.material:material"
+    const val composeIconsExtended = "androidx.compose.material:material-icons-extended"
 
     private const val composeNavigationVersion = "2.5.3"
     const val composeNavigation = "androidx.navigation:navigation-compose:$composeNavigationVersion"
@@ -23,12 +25,13 @@ object Deps {
     const val kotlinDateTime = "org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion"
 
     // HILT
-    private const val hiltVersion = "2.42"
-    private const val hiltCompilerVersion = "1.0.0"
+    private const val hiltVersion = "2.50"
+    private const val hiltCompilerVersion = "2.50"
     const val hiltAndroid = "com.google.dagger:hilt-android:$hiltVersion"
-    const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
-    const val hiltCompiler = "androidx.hilt:hilt-compiler:$hiltCompilerVersion"
-    const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:$hiltCompilerVersion"
+    const val hiltCompiler = "com.google.dagger:hilt-compiler:$hiltCompilerVersion"
+
+    private const val hiltNavigationComposeVersion = "1.0.0"
+    const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:$hiltNavigationComposeVersion"
 
     // KTOR
     private const val ktorVersion = "2.1.3"
@@ -39,7 +42,7 @@ object Deps {
     const val ktorIOS = "io.ktor:ktor-client-ios:$ktorVersion"
 
     // GRADLE PLUGINS
-    const val kotlinVersion = "1.7.21"
+    const val kotlinVersion = "1.9.22"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
     private const val gradleVersion = "7.2.2"
@@ -70,8 +73,8 @@ object Deps {
     private const val testRunnerVersion = "1.5.1"
     const val testRunner = "androidx.test:runner:$testRunnerVersion"
 
-    const val composeTesting = "androidx.compose.ui:ui-test-junit4:$composeVersion"
-    const val composeTestManifest = "androidx.compose.ui:ui-test-manifest:$composeVersion"
+    const val composeTesting = "androidx.compose.ui:ui-test-junit4:"
+    const val composeTestManifest = "androidx.compose.ui:ui-test-manifest:"
 
     const val hiltTesting = "com.google.dagger:hilt-android-testing:$hiltVersion"
 

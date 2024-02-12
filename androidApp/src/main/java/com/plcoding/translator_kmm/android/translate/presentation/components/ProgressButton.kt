@@ -34,7 +34,7 @@ fun ProgressButton(
             .padding(8.dp),
         contentAlignment = Alignment.Center
     ) {
-        AnimatedContent(targetState = isLoading) { isLoading ->
+        AnimatedContent(targetState = isLoading, label = "button") { isLoading ->
             if(isLoading) {
                 CircularProgressIndicator(
                     modifier = Modifier.size(20.dp),

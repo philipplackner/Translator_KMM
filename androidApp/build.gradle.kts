@@ -8,11 +8,11 @@ plugins {
 
 android {
     namespace = "com.plcoding.translator_kmm.android"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         applicationId = "com.plcoding.translator_kmm.android"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -22,7 +22,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Deps.composeVersion
+        kotlinCompilerExtensionVersion = "1.5.8"
     }
     packagingOptions {
         resources {
@@ -38,6 +38,7 @@ android {
 
 dependencies {
     implementation(project(":shared"))
+    implementation(platform(Deps.composeBom))
     implementation(Deps.composeUi)
     implementation(Deps.composeUiTooling)
     implementation(Deps.composeUiToolingPreview)
@@ -49,7 +50,6 @@ dependencies {
     implementation(Deps.coilCompose)
 
     implementation(Deps.hiltAndroid)
-    kapt(Deps.hiltAndroidCompiler)
     kapt(Deps.hiltCompiler)
     implementation(Deps.hiltNavigationCompose)
 
@@ -61,6 +61,5 @@ dependencies {
     androidTestImplementation(Deps.rules)
     debugImplementation(Deps.composeTestManifest)
 
-    kaptAndroidTest(Deps.hiltAndroidCompiler)
     androidTestImplementation(Deps.hiltTesting)
 }

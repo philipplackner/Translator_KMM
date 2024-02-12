@@ -13,7 +13,7 @@ import javax.inject.Inject
 class AndroidTranslateViewModel @Inject constructor(
     private val translate: Translate,
     private val historyDataSource: HistoryDataSource
-): ViewModel() {
+) : ViewModel() {
 
     private val viewModel by lazy {
         TranslateViewModel(
