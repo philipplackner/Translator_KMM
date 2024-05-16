@@ -22,7 +22,6 @@ import Combine
         self.parser = parser
         self.languageCode = languageCode
         self.viewModel = VoiceToTextViewModel(parser: parser, coroutineScope: nil)
-        self.viewModel.onEvent(event: VoiceToTextEvent.PermissionResult(isGranted: true, isPermanentlyDeclined: false))
     }
     
     func onEvent(event: VoiceToTextEvent) {
@@ -30,6 +29,7 @@ import Combine
     }
     
     func startObserving() {
+        self.viewModel.onEvent(event: VoiceToTextEvent.PermissionResult(isGranted: true, isPermanentlyDeclined: false))
         handle = viewModel.state.subscribe { [weak self] state in
             if let state {
                 self?.state = state
