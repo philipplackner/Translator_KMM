@@ -1,14 +1,16 @@
 package com.plcoding.translator_kmm.translate.data.history
 
+import app.cash.sqldelight.coroutines.asFlow
+import app.cash.sqldelight.coroutines.mapToList
 import com.plcoding.translator_kmm.core.domain.util.CommonFlow
 import com.plcoding.translator_kmm.core.domain.util.toCommonFlow
 import com.plcoding.translator_kmm.database.TranslateDatabase
 import com.plcoding.translator_kmm.translate.domain.history.HistoryDataSource
 import com.plcoding.translator_kmm.translate.domain.history.HistoryItem
-import com.squareup.sqldelight.runtime.coroutines.asFlow
-import com.squareup.sqldelight.runtime.coroutines.mapToList
+import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.flow.map
 import kotlinx.datetime.Clock
+import kotlin.coroutines.CoroutineContext
 
 class SqlDelightHistoryDataSource(
     db: TranslateDatabase
@@ -16,11 +18,11 @@ class SqlDelightHistoryDataSource(
 
     private val queries = db.translateQueries
 
-    override fun getHistory(): CommonFlow<List<HistoryItem>> {
+    override fun getHistory(context: CoroutineContext): CommonFlow<List<HistoryItem>> {
         return queries
             .getHistory()
             .asFlow()
-            .mapToList()
+            .mapToList(context)
             .map { history ->
                 history.map { it.toHistoryItem() }
             }

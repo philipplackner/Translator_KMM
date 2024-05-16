@@ -1,6 +1,7 @@
 package com.plcoding.translator_kmm.android.di
 
 import android.app.Application
+import app.cash.sqldelight.db.SqlDriver
 import com.plcoding.translator_kmm.database.TranslateDatabase
 import com.plcoding.translator_kmm.translate.data.history.SqlDelightHistoryDataSource
 import com.plcoding.translator_kmm.translate.data.local.DatabaseDriverFactory
@@ -9,12 +10,11 @@ import com.plcoding.translator_kmm.translate.data.translate.KtorTranslateClient
 import com.plcoding.translator_kmm.translate.domain.history.HistoryDataSource
 import com.plcoding.translator_kmm.translate.domain.translate.Translate
 import com.plcoding.translator_kmm.translate.domain.translate.TranslateClient
-import com.squareup.sqldelight.db.SqlDriver
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import io.ktor.client.*
+import io.ktor.client.HttpClient
 import javax.inject.Singleton
 
 @Module

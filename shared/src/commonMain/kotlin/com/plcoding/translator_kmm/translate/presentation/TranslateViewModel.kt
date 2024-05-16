@@ -23,7 +23,7 @@ class TranslateViewModel(
     private val _state = MutableStateFlow(TranslateState())
     val state = combine(
         _state,
-        historyDataSource.getHistory()
+        historyDataSource.getHistory(viewModelScope.coroutineContext)
     ) { state, history ->
         if(state.history != history) {
             state.copy(
