@@ -1,12 +1,14 @@
 plugins {
-    kotlin("multiplatform")
-    kotlin("native.cocoapods")
-    id("com.android.library")
-    kotlin("plugin.serialization") version Deps.kotlinVersion
-    id("com.squareup.sqldelight")
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.kotlin.native.cocoapods)
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
+    tasks.create("testClasses")
+
     android()
     iosX64()
     iosArm64()
@@ -19,6 +21,7 @@ kotlin {
         ios.deploymentTarget = "14.1"
         podfile = project.file("../iosApp/Podfile")
         framework {
+            isStatic = false
             baseName = "shared"
         }
     }
@@ -26,28 +29,25 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(Deps.ktorCore)
-                implementation(Deps.ktorSerialization)
-                implementation(Deps.ktorSerializationJson)
-                implementation(Deps.sqlDelightRuntime)
-                implementation(Deps.sqlDelightCoroutinesExtensions)
-                implementation(Deps.kotlinDateTime)
+                implementation(libs.bundles.ktor)
+                implementation(libs.sqldelight.runtime)
+                implementation(libs.sqldelight.coroutines.extensions)
+                implementation(libs.kotlin.date.time)
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-                implementation(Deps.assertK)
-                implementation(Deps.turbine)
+                implementation(libs.assertk)
+                implementation(libs.turbine)
             }
         }
         val androidMain by getting {
             dependencies {
-                implementation(Deps.ktorAndroid)
-                implementation(Deps.sqlDelightAndroidDriver)
+                implementation(libs.ktor.android)
+                implementation(libs.sqldelight.android.driver)
             }
         }
-        val androidTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -58,8 +58,8 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
 
             dependencies {
-                implementation(Deps.ktorIOS)
-                implementation(Deps.sqlDelightNativeDriver)
+                implementation(libs.ktor.ios)
+                implementation(libs.sqldelight.native.driver)
             }
         }
         val iosX64Test by getting
@@ -76,9 +76,22 @@ kotlin {
 
 android {
     namespace = "com.plcoding.translator_kmm"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+sqldelight {
+    databases {
+        create("TranslateDatabase") {
+            packageName.set("com.plcoding.translator_kmm.database")
+        }
     }
 }

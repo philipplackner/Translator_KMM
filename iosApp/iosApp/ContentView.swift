@@ -2,15 +2,18 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-	let greet = Greeting().greeting()
-
+    
+    let appModule: AppModule
+    
 	var body: some View {
-		Text(greet)
-	}
-}
-
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
+        ZStack {
+            Color.background
+                .ignoresSafeArea()
+            TranslateScreen(
+                historyDataSource: appModule.historyDataSource,
+                translateUseCase: appModule.translateUseCase,
+                parser: appModule.voiceParser
+            )
+        }
 	}
 }

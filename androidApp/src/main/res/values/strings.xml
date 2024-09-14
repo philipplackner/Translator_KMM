@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+    <string name="swap_languages">Swap languages</string>
+    <string name="enter_a_text_to_translate">Enter a text to translate</string>
+    <string name="translate">Translate</string>
+    <string name="copy">Copy</string>
+    <string name="play_loud">Play loud</string>
+    <string name="copied_to_clipboard">Text copied to clipboard</string>
+    <string name="history">History</string>
+    <string name="error_service_unavailable">Oops, an error happened. Please try again later.</string>
+    <string name="client_error">Oops, an error happened. Please contact the support.</string>
+    <string name="server_error">An error happened. Please try again later.</string>
+    <string name="unknown_error">Oops, an unknown error happened.</string>
+    <string name="record_audio">Record audio</string>
+    <string name="error_speech_recognition_unavailable">Speech recognition is not available</string>
+    <string name="stop_recording">Stop recording</string>
+    <string name="apply">Apply</string>
+    <string name="record_again">Record again</string>
+    <string name="listening">Listening...</string>
+    <string name="start_talking">Click record and start talking</string>
+</resources>
