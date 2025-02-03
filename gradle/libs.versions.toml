@@ -1,7 +1,7 @@
 [versions]
-agp = "8.4.0"
+agp = "8.5.2"
 coilCompose = "2.6.0"
-kotlin = "1.9.23"
+kotlin = "2.0.21"
 junit = "4.13.2"
 testRunner = "1.5.2"
 activityCompose = "1.9.0"
@@ -9,7 +9,7 @@ ktor = "2.3.9"
 composeCompiler = "1.5.13"
 composeBom = "2024.05.00"
 navigationCompose = "2.7.7"
-ksp = "1.9.23-1.0.19"
+ksp = "2.0.21-1.0.28"
 kotlinDateTime = "0.5.0"
 hilt = "2.51.1"
 hiltNavigationCompose = "1.2.0"
@@ -61,6 +61,7 @@ kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref 
 kotlin-native-cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 [bundles]
 ktor = [

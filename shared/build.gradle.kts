@@ -9,7 +9,7 @@ plugins {
 kotlin {
     tasks.create("testClasses")
 
-    android()
+    androidTarget()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -25,51 +25,26 @@ kotlin {
             baseName = "shared"
         }
     }
-    
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(libs.bundles.ktor)
-                implementation(libs.sqldelight.runtime)
-                implementation(libs.sqldelight.coroutines.extensions)
-                implementation(libs.kotlin.date.time)
-            }
-        }
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-                implementation(libs.assertk)
-                implementation(libs.turbine)
-            }
-        }
-        val androidMain by getting {
-            dependencies {
-                implementation(libs.ktor.android)
-                implementation(libs.sqldelight.android.driver)
-            }
-        }
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        val iosSimulatorArm64Main by getting
-        val iosMain by creating {
-            dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
-            iosSimulatorArm64Main.dependsOn(this)
 
-            dependencies {
-                implementation(libs.ktor.ios)
-                implementation(libs.sqldelight.native.driver)
-            }
+    sourceSets {
+        commonMain.dependencies {
+            implementation(libs.bundles.ktor)
+            implementation(libs.sqldelight.runtime)
+            implementation(libs.sqldelight.coroutines.extensions)
+            implementation(libs.kotlin.date.time)
         }
-        val iosX64Test by getting
-        val iosArm64Test by getting
-        val iosSimulatorArm64Test by getting
-        val iosTest by creating {
-            dependsOn(commonTest)
-            iosX64Test.dependsOn(this)
-            iosArm64Test.dependsOn(this)
-            iosSimulatorArm64Test.dependsOn(this)
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation(libs.assertk)
+            implementation(libs.turbine)
+        }
+        androidMain.dependencies {
+            implementation(libs.ktor.android)
+            implementation(libs.sqldelight.android.driver)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.ios)
+            implementation(libs.sqldelight.native.driver)
         }
     }
 }
