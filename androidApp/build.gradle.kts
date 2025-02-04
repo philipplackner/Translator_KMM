@@ -4,15 +4,16 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.composeCompiler)
 }
 
 android {
     namespace = "com.plcoding.translator_kmm.android"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         applicationId = "com.plcoding.translator_kmm.android"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -31,7 +32,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
